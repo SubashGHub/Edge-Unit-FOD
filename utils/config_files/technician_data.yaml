@@ -1,0 +1,9 @@
+technician_data:
+- user_id: 4
+  username: Mechanic2
+- user_id: 5
+  username: Mechanic3
+- user_id: 6
+  username: Technician_Jhon
+- user_id: 3
+  username: Mechanic1

@@ -1,0 +1,76 @@
+tools_details:
+  T001:
+  - tool_id: TL-20251104-J2OM
+    tool_name: Wrench 6mm
+  - tool_id: TL-20251104-X4XN
+    tool_name: Wrench 7mm
+  - tool_id: TL-20251104-SFLJ
+    tool_name: Wrench 8mm
+  - tool_id: TL-20251105-B596
+    tool_name: Cutter
+  - tool_id: TL-20251104-JCOX
+    tool_name: PH1 Phillips
+  - tool_id: TL-20251104-7D10
+    tool_name: Flat 6 x 0.9 Screwdriver
+  - tool_id: TL-20251104-KM7W
+    tool_name: Flat 3 x 0.5 Screwdriver
+  T002:
+  - tool_id: TL-20251104-J2OM
+    tool_name: Wrench 6mm
+  - tool_id: TL-20251104-X4XN
+    tool_name: Wrench 7mm
+  - tool_id: TL-20251104-SFLJ
+    tool_name: Wrench 8mm
+  - tool_id: TL-20251105-B596
+    tool_name: Cutter
+  - tool_id: TL-20251104-JCOX
+    tool_name: PH1 Phillips
+  - tool_id: TL-20251104-7D10
+    tool_name: Flat 6 x 0.9 Screwdriver
+  - tool_id: TL-20251104-KM7W
+    tool_name: Flat 3 x 0.5 Screwdriver
+  T003:
+  - tool_id: TL-20251104-J2OM
+    tool_name: Wrench 6mm
+  - tool_id: TL-20251104-X4XN
+    tool_name: Wrench 7mm
+  - tool_id: TL-20251104-SFLJ
+    tool_name: Wrench 8mm
+  - tool_id: TL-20251105-B596
+    tool_name: Cutter
+  - tool_id: TL-20251104-JCOX
+    tool_name: PH1 Phillips
+  - tool_id: TL-20251104-7D10
+    tool_name: Flat 6 x 0.9 Screwdriver
+  - tool_id: TL-20251104-KM7W
+    tool_name: Flat 3 x 0.5 Screwdriver
+  T005:
+  - tool_id: TL-20251104-J2OM
+    tool_name: Wrench 6mm
+  - tool_id: TL-20251104-X4XN
+    tool_name: Wrench 7mm
+  - tool_id: TL-20251104-SFLJ
+    tool_name: Wrench 8mm
+  - tool_id: TL-20251105-B596
+    tool_name: Cutter
+  - tool_id: TL-20251104-JCOX
+    tool_name: PH1 Phillips
+  - tool_id: TL-20251104-7D10
+    tool_name: Flat 6 x 0.9 Screwdriver
+  - tool_id: TL-20251104-KM7W
+    tool_name: Flat 3 x 0.5 Screwdriver
+  T004:
+  - tool_id: TL-20251104-J2OM
+    tool_name: Wrench 6mm
+  - tool_id: TL-20251104-X4XN
+    tool_name: Wrench 7mm
+  - tool_id: TL-20251104-SFLJ
+    tool_name: Wrench 8mm
+  - tool_id: TL-20251105-B596
+    tool_name: Cutter
+  - tool_id: TL-20251104-JCOX
+    tool_name: PH1 Phillips
+  - tool_id: TL-20251104-7D10
+    tool_name: Flat 6 x 0.9 Screwdriver
+  - tool_id: TL-20251104-KM7W
+    tool_name: Flat 3 x 0.5 Screwdriver

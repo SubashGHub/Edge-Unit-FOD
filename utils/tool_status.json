@@ -1,0 +1,46 @@
+{
+  "T001": {
+    "Wrench 6mm": "Returned",
+    "Wrench 7mm": "Returned",
+    "Wrench 8mm": "Returned",
+    "Cutter": "Returned",
+    "PH1 Phillips": "Returned",
+    "Flat 6 x 0.9 Screwdriver": "Returned",
+    "Flat 3 x 0.5 Screwdriver": "Returned"
+  },
+  "T002": {
+    "Flat 3 x 0.5 Screwdriver": "Returned",
+    "Flat 6 x 0.9 Screwdriver": "Returned",
+    "PH1 Phillips": "Taken",
+    "Wrench 6mm": "Returned",
+    "Wrench 7mm": "Returned",
+    "Wrench 8mm": "Returned"
+  },
+  "T003": {
+    "Wrench 6mm": "Returned",
+    "Wrench 7mm": "Returned",
+    "Wrench 8mm": "Returned",
+    "Cutter": "Returned",
+    "PH1 Phillips": "Returned",
+    "Flat 6 x 0.9 Screwdriver": "Returned",
+    "Flat 3 x 0.5 Screwdriver": "Returned"
+  },
+  "T005": {
+    "Wrench 6mm": "Returned",
+    "Wrench 7mm": "Returned",
+    "Wrench 8mm": "Returned",
+    "Cutter": "Returned",
+    "PH1 Phillips": "Returned",
+    "Flat 6 x 0.9 Screwdriver": "Returned",
+    "Flat 3 x 0.5 Screwdriver": "Returned"
+  },
+  "T004": {
+    "Wrench 6mm": "Returned",
+    "Wrench 7mm": "Returned",
+    "Wrench 8mm": "Returned",
+    "Cutter": "Returned",
+    "PH1 Phillips": "Returned",
+    "Flat 6 x 0.9 Screwdriver": "Returned",
+    "Flat 3 x 0.5 Screwdriver": "Returned"
+  }
+}

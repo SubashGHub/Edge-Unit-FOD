@@ -1,0 +1,35 @@
+tools_class_details:
+  T001:
+
+  T002:
+    0: Flat 3 x 0.5 Screwdriver
+    2: Flat 6 x 0.9 Screwdriver
+    4: PH1 Phillips
+    6: Wrench 6mm
+    8: Wrench 7mm
+    10: Wrench 8mm
+
+  T003:
+    0: Drill bit
+    1: Blue Pen
+
+  T004:
+    0: Cutter
+
+  T005:
+
+
+TRAY_MARKERS:
+  1: 10
+  2: 20
+  3: 35
+  4: 40
+  5: 45
+
+AUTO_LOGOUT_TIMEOUT: 20 # Sec
+
+Service_station: Station-001
+Tool_Unit_name: Cart-001
+Tool_Unit_id: U001
+
+model_path: D:\PythonProject\Edge Unit FOD\models\6,6_cls\best.pt

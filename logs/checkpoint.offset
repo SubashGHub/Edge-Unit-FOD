@@ -1,0 +1,10 @@
+{
+  "offset": 9137,
+  "last_sent": {
+    "timestamp": "2025-11-10 17:55:11",
+    "event": "system_offline",
+    "tray_id": null,
+    "tool_id": null,
+    "tool_name": null
+  }
+}

@@ -1,0 +1,31 @@
+description: Ultralytics YOLO11m model trained on /content/drive/MyDrive/Colab Notebooks/yolo_project/yolo/data_1.yaml
+author: Ultralytics
+date: '2025-10-25T13:30:08.271838'
+version: 8.3.214
+license: AGPL-3.0 License (https://ultralytics.com/license)
+docs: https://docs.ultralytics.com
+stride: 32
+task: detect
+batch: 1
+imgsz:
+- 960
+- 960
+names:
+  0: Black Pen
+  1: Blue Pen
+  2: Cutter
+  3: Drill Bit
+  4: Wrench 6mm
+  5: Wrench 7mm
+  6: Wrench 8mm
+  7: Wrench 6mm Missing
+  8: Wrench 7mm Missing
+  9: Wrench 8mm Missing
+args:
+  batch: 1
+  fraction: 1.0
+  half: false
+  int8: false
+  dynamic: false
+  nms: false
+channels: 3

@@ -1,0 +1,18 @@
+# =============================
+# 🔧 Sync Configuration
+# =============================
+log_settings:
+  event_log: "logs/event.log"         # input event log file
+  sync_log: "logs/sync.log"           # where sync progress is logged
+  checkpoint_file: "logs/checkpoint.offset"
+
+sync_settings:
+  batch_size: 0                       # number of events sent per batch
+  sync_interval_sec: 2              # run every 2 min
+  retry_on_fail: true
+
+rotation_settings:
+  enable_rotation: true
+  max_log_size_mb: 1                  # rotate when exceeds 5 MB
+  max_log_backups: 10                 # keep last 10 rotated logs
+  log_dir: "logs"
