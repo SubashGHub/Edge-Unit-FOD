@@ -156,6 +156,50 @@ def log_event(event_type, tray_id=None, details=None):
 # 👤 TECHNICIAN SESSION HANDLING
 # ============================================================
 
+# ============================================================
+# 🔥 GRAD-CAM VISUALIZATION FUNCTION
+# ============================================================
+import torch
+import numpy as np
+import cv2
+import matplotlib.pyplot as plt
+
+def grad_cam_visualize(model, frame, layer_name='model.model[-2]'):
+    """Generate Grad-CAM visualization for YOLO model output."""
+    model.model.eval()
+    layer = dict(model.model.named_modules())[layer_name]
+    activations, grads = [], []
+
+    def fwd_hook(_, __, out): activations.append(out)
+    def bwd_hook(_, grad_in, grad_out): grads.append(grad_out[0])
+
+    # Register hooks
+    layer.register_forward_hook(fwd_hook)
+    layer.register_backward_hook(bwd_hook)
+
+    # Forward pass
+    results = model(frame, verbose=False)
+    boxes = results[0].boxes
+
+    if len(boxes) == 0:
+        return frame  # No detections
+
+    # Pick the most confident detection
+    conf = boxes.conf.mean()
+    conf.backward()
+
+    grad = grads[0].mean(dim=(2, 3), keepdim=True)
+    cam = (activations[0] * grad).sum(dim=1).squeeze().detach().cpu().numpy()
+    cam = (cam - cam.min()) / (cam.max() - cam.min() + 1e-6)
+    cam = cv2.resize(cam, (frame.shape[1], frame.shape[0]))
+
+    # Apply heatmap
+    heatmap = cv2.applyColorMap((cam * 255).astype('uint8'), cv2.COLORMAP_JET)
+    blended = cv2.addWeighted(frame, 0.6, heatmap, 0.4, 0)
+
+    return blended
+
+
 def auto_logout_monitor():
     """Automatically logout if no activity for AUTO_LOGOUT_TIMEOUT."""
     global current_emp_id, system_online, last_event_time
@@ -224,16 +268,22 @@ def check_tray_marker(frame):
     return None
 
 
-def detect_tools(frame):
-    """Run YOLO inference to detect tools."""
+def detect_tools(frame, gradcam=False):
+    """Run YOLO inference to detect tools (with optional Grad-CAM)."""
     results = model(frame,
                     imgsz=960,
-                    confidence=0.85,
-                    device='cpu'  # ✅ force YOLO to use CPU
-    )
+                    device='cpu')
     detected_ids = {int(det.cls[0]) for det in results[0].boxes}
     annotated_frame = results[0].plot()
+
+    if gradcam and len(detected_ids) > 0:
+        try:
+            annotated_frame = grad_cam_visualize(model, frame)
+        except Exception as e:
+            print(f"[Grad-CAM error] {e}")
+
     return detected_ids, annotated_frame
+
 
 
 def annotate_status(tray_id):
@@ -352,6 +402,10 @@ def main():
                     detected_ids, annotated_frame = result_queue.get()
                     last_detected_ids = detected_ids
                     annotate_status(current_tray)
+                    # Show Grad-CAM once every 30 frames (or any interval)
+                    if int(time.time()) % 20 == 0:
+                        annotated_frame = grad_cam_visualize(model, frame)
+
                     cv2.imshow("Tray Monitor", annotated_frame)
 
             else:

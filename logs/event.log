@@ -37,3 +37,5 @@
 {"timestamp": "2025-11-10 17:54:50", "service_station": "Station-001", "unit": "Cart-001", "unit_id": "U001", "user_id": 3, "user_name": "Mechanic1", "event": "tray_close", "tray_id": "T002", "tool_id": null, "tool_name": null}
 {"timestamp": "2025-11-10 17:55:11", "service_station": "Station-001", "unit": "Cart-001", "unit_id": "U001", "user_id": 3, "user_name": "Mechanic1", "event": "auto_logout", "tray_id": null, "tool_id": null, "tool_name": null}
 {"timestamp": "2025-11-10 17:55:11", "service_station": "Station-001", "unit": "Cart-001", "unit_id": "U001", "user_id": "N/A", "user_name": "Unknown", "event": "system_offline", "tray_id": null, "tool_id": null, "tool_name": null}
+{"timestamp": "2025-11-11 14:35:12", "service_station": "Station-001", "unit": "Cart-001", "unit_id": "U001", "user_id": "N/A", "user_name": "Unknown", "event": "system_online", "tray_id": null, "tool_id": null, "tool_name": null}
+{"timestamp": "2025-11-11 14:35:37", "service_station": "Station-001", "unit": "Cart-001", "unit_id": "U001", "user_id": 3, "user_name": "Mechanic1", "event": "login", "tray_id": null, "tool_id": null, "tool_name": null}
