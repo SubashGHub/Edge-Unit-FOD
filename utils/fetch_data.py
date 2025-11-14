@@ -2,6 +2,8 @@ import psycopg2
 import yaml
 import os
 
+from networkx.utils.misc import dict_to_numpy_array
+
 # --- Database connection config ---
 DB_CONFIG = {
     "host": "192.168.0.113",
@@ -54,10 +56,10 @@ def fetch_tray_data(unit_id):
     from detection_unit du 
     join detection_tray dt 
     on du.id = dt.unit_id 
-    where du.unit_id = '%s'
+    where du.unit_id = %s
     order by dt.tray_id asc;
     """
-    cur.execute(query, unit_id)
+    cur.execute(query, (unit_id,))
     rows = cur.fetchall()
     columns = [desc[0] for desc in cur.description]
 
@@ -103,6 +105,26 @@ where dt3.unit_code = 'U001';
 
     print("✅ tools_config.yaml created successfully!")
 
+def get_jobID():
+    conn = get_db_connection()
+    cur = conn.cursor()
+    query = """
+    select dj.job_id 
+from detection_jobcard_assigned_units djau 
+join detection_jobcard dj 
+on dj.id = djau.jobcard_id 
+where djau.unit_id = 3 and dj.status = 'CLOSED';
+    """
+    cur.execute(query)
+    rows = cur.fetchall()
+    yaml_data = {"job_id": [item[0] for item in rows]}
+
+    output_path = "config_files/job_id_data.yaml"
+    with open( output_path, 'w') as st:
+        yaml.dump(yaml_data, st)
+        print(f"Job_Id data saved successfully in {output_path}.")
+
+
 # --- Save YAML ---
 def save_yaml(data, filename):
     """Save technician data to a YAML file."""
@@ -140,7 +162,7 @@ def main():
     fetch_tools(unit_id)
     m_list = cfg.get("TRAY_MARKERS", {})
     save_marker_yaml(t_data, m_list)
-    # tool_class_details = cfg.get("tool_class_details", {})
+    get_jobID()
 
 
 if __name__ == "__main__":

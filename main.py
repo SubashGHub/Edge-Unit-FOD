@@ -54,6 +54,9 @@ with open("utils/config_files/marker_mapped.yaml", "r") as f:
 with open("utils/config_files/technician_data.yaml", "r") as f:
     tech_data = yaml.safe_load(f)
 
+with open("utils/config_files/job_id_data.yaml", "r") as f:
+    job_data = yaml.safe_load(f)
+
 # ------------------------------------------------------------
 # 🧰 TOOL & TRAY CONFIGURATION
 # ------------------------------------------------------------
@@ -87,6 +90,7 @@ STATION_NAME = cfg.get("Service_station", "Unknown")
 MODEL_PATH = cfg.get(
     "model_path",
 )
+JOB_ID = job_data['job_id'][0]
 
 print(f"\n✅ Loaded config for {STATION_NAME}")
 print(f"Tray Markers: {TRAY_MARKERS}")
@@ -141,6 +145,7 @@ def log_event(event_type, tray_id=None, details=None):
         "unit_id": TOOL_UNIT_ID,
         "user_id": current_emp_id or "N/A",
         "user_name": technician_name,
+        "job_id": JOB_ID,
         "event": event_type,
         "tray_id": tray_id,
         "tool_id": details.get("tool_id"),
